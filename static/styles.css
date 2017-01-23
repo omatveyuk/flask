@@ -1,0 +1,45 @@
+input[type="text"], input[type="submit"], input[type="checkbox"] {
+  background-color: #ffd700;
+  padding: 5px;
+  margin: 5px;
+}
+
+fieldset {
+  width: 25%;
+}
+
+#last-name {
+  font-weight: bold;
+}
+
+#instruction {
+  border: 1px solid;
+  padding: 5px;
+}
+
+#h1-title {
+    color: #117A65;
+    font-family: sans-serif;
+}
+
+#footer {
+    font-family: sans-serif;
+    font-style: italic;
+    padding-top: 25px;
+}
+
+#font-20 {
+    font-size: 20px;
+}
+
+.fields {
+    font-weight: bold;
+}
+
+.alert-warning {
+    color: #cc0000;
+    font-weight: bold;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    padding: 10px;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://fellowship.hackbrightacademy.com/materials/skills/flask/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Flask Skills</title>
+
+    <link rel="stylesheet" href="./Flask Skills_files/pygments.css" type="text/css">
+    <link rel="stylesheet" href="./Flask Skills_files/handouts-sphinx.css">
+
+    <link href="./Flask Skills_files/css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="page-wrapper">
+    <div id="page-sidebar">
+        <header>
+            <p class="project">Hackbright Fellowship March 2017</p>
+
+            <p class="title">Flask Skills</p>
+
+            <p class="backlink"><a href="http://fellowship.hackbrightacademy.com/"> « Back to Homepage</a></p>
+
+        </header>
+        <div id="toc">
+            <ul>
+<li><a class="reference internal" href="http://fellowship.hackbrightacademy.com/materials/skills/flask/#">Flask Skills</a><ul>
+<li><a class="reference internal" href="http://fellowship.hackbrightacademy.com/materials/skills/flask/#take-aways">Take Aways</a></li>
+<li><a class="reference internal" href="http://fellowship.hackbrightacademy.com/materials/skills/flask/#assessment">Assessment</a></li>
+<li><a class="reference internal" href="http://fellowship.hackbrightacademy.com/materials/skills/flask/#directions">Directions</a><ul>
+<li><a class="reference internal" href="http://fellowship.hackbrightacademy.com/materials/skills/flask/#setup">Setup</a></li>
+<li><a class="reference internal" href="http://fellowship.hackbrightacademy.com/materials/skills/flask/#part-1-flask-application">Part 1: Flask Application</a></li>
+<li><a class="reference internal" href="http://fellowship.hackbrightacademy.com/materials/skills/flask/#part-2-template-inheritance">Part 2: Template Inheritance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+    </div>
+    <div id="page-content">
+        
+  <div class="section" id="flask-skills">
+<h1>Flask Skills</h1>
+<p>Flask Skills is meant to help you practice and assess your understanding of
+the Flask framework.</p>
+<p>Follow the directions below to review what you should have learned,
+practice implementing Flask, and submit an assessment of your understanding.</p>
+<div class="section" id="take-aways">
+<h2>Take Aways</h2>
+<ul class="simple">
+<li>know how to construct a basic Flask application with multiple routes</li>
+<li>know when to use GET vs. POST methods</li>
+<li>know how to retrieve form input</li>
+<li>know how to build and integrate Jinja templates and extend base templates</li>
+<li>know how to create and run a new virtual environment</li>
+</ul>
+</div>
+<div class="section" id="assessment">
+<h2>Assessment</h2>
+<p>Be honest with yourself and your adviser about how this assessment goes for you.
+If you don’t finish it, take note of which problems you weren’t able to finish,
+and come back to them later. If you have <em>ideas</em> about how to solve something,
+but not a fully formed solution, leave your thoughts as comments in the
+function body.</p>
+<p>We’re assessing this on correctness and style — we want to see where you
+are on all of these things. So, choose good variable names, and show off good
+Python style. In addition, for each question, consider any “edge cases”
+where you might want to handle unusual input or errors and, as you are able
+to, think about how to handle those. If it makes sense to use a more
+intermediate concept, like a list comprehension, do so.</p>
+<p>You must turn in all of your work <strong>through FRODO</strong>
+by <strong>9PM on Sunday</strong>.</p>
+</div>
+<div class="section" id="directions">
+<h2>Directions</h2>
+<div class="section" id="setup">
+<h3>Setup</h3>
+<p>First, create a virtual environment and activate it.</p>
+<p>Reminder: in Windows, make sure you use the command <code class="docutils literal"><span class="pre">virtualenv</span> <span class="pre">env</span> <span class="pre">--always-copy</span></code> to create a new virtual environment.</p>
+<p>We’ve included the requirements for this project in <cite>requirements.txt</cite>. Install
+them.</p>
+</div>
+<div class="section" id="part-1-flask-application">
+<h3>Part 1: Flask Application</h3>
+<p>Write a small Flask app in <cite>server.py</cite> that does the following:</p>
+<ul>
+<li><p class="first">Serves the template <cite>index.html</cite> at the route <cite>/</cite>. Feel free to be as creative as you’d like with the homepage. Do, however, make sure to include a link to the application form.</p>
+</li>
+<li><p class="first">Serves the template <cite>application-form.html</cite> at the route <cite>/application-form</cite>.</p>
+<p>Make a copy of both the <cite>application-form.html</cite> and <cite>styles.css</cite> files you made in <cite>skills-html-css</cite>. Modify <cite>application-form.html</cite> to create your job-selection input using a jinja for-loop. (Hint: this means you’ll have to pass the list of possible jobs from your route to the template.)</p>
+</li>
+<li><p class="first">Handles submission of a form in <cite>application-form.html</cite> to the route <cite>/application-success</cite>.</p>
+<ul>
+<li><p class="first">Gets the first name, last name, salary, and job title from the
+form submission.</p>
+</li>
+<li><p class="first">Returns a response that acknowledges their application. This
+should repeat their name, title, and salary requirement, like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Thank you, Jessica McHackbright, for applying to be a QA Engineer. Your
+minimum salary requirement is $89,000.
+</pre></div>
+</div>
+</li>
+</ul>
+<p>You should do this by using a Jinja template. Use the file called <cite>application-response.html</cite>.</p>
+<p>You’ll need to look up currency formatting to learn how to make the salary appear with commas in the right places, and, if needed, a decimal point and exactly two decimal places.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="part-2-template-inheritance">
+<h3>Part 2: Template Inheritance</h3>
+<p>Create a new template called <cite>base.html</cite>. Have your other three templates
+inherit from <cite>base.html</cite> using Jinja’s <code class="docutils literal"><span class="pre">{%</span> <span class="pre">extends</span> <span class="pre">%}</span></code> and <code class="docutils literal"><span class="pre">{%</span> <span class="pre">block</span> <span class="pre">%}</span></code>
+syntax.</p>
+</div>
+</div>
+</div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript" src="./Flask Skills_files/jquery.js"></script>
+<script type="text/javascript" src="./Flask Skills_files/underscore.js"></script>
+<script type="text/javascript" src="./Flask Skills_files/doctools.js"></script> 
+
+</body></html>

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Application Response{% endblock %}
+
+
+{% block h1 %}Confirmation{% endblock %}
+
+{% block content %}
+<div id="font-20">
+    Thank you, <span class="fields">{{firstname}} {{lastname}}</span>, for applying to be a <span class="fields">{{jobtitle}}</span>. 
+    <br>Your minimum salary requirement is <span class="fields">${{salary}}</span>.
+</div>
+{% endblock %}

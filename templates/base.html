@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+      <link rel="stylesheet" href="./static/styles.css"/>
+      <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+
+    <!-- Show flashed messages -->
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <div class="alert-warning">{{ message }}</div>
+        {% endfor %}
+    {% endwith %}
+
+    <h1 id="h1-title">{% block h1 %}{% endblock %}</h1>
+
+    <!-- This is where the main content goes. -->
+    {% block content %}
+           CONTENT OF PAGE GOES HERE VIA INHERITANCE
+    {% endblock %}
+
+    <div id="footer">
+      Created by Oxana Matveyuk. HackbrigtAcademy-Grace: March 2017
+    </div>
+  </body>
+</html>
+

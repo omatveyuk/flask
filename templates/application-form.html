@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Application Form{% endblock %}
+
+{% block h1 %}Application Form{% endblock %}
+
+{% block content %}
+    <div id="instruction">
+      Welcome a prospective candidate!<br> 
+      Thank you for considering us for your employment. To begin fill out 
+      the following form. Don't forget to let us know the position you are 
+      applying for and desired salary. <br>
+      We will contact you soon
+    </div>
+    <form action="/application-success" method="POST">
+      
+      <label>
+        First Name:<input type="text" name="firstname">
+      </label><br>
+
+      <label>
+        Last Name:<input id="last-name" type="text" name="lastname">
+      </label><br>
+
+      <label>
+        Salary requirement: <input type="text" name="salary">
+      </label><br>
+
+      <fieldset>
+        <legend>Applying for:</legend><br>
+            {% for job in jobs %}
+            <label>
+              <input type="radio" name="job" value="{{ job }}"{% if jobs[job]["checked"] %} checked{% endif %}>{{ jobs[job]["title"] }}
+            </label><br>
+            {% endfor %}
+      </fieldset><br>
+
+      <input type="submit">
+    </form>
+{% endblock %}
